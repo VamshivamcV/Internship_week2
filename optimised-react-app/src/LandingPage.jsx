@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Landingpage = () => {
+const LandingPage = () => {
   return (
     <div style={{ fontFamily: 'sans-serif', padding: '2rem', maxWidth: '900px', margin: '0 auto' }}>
       
@@ -90,4 +90,4 @@ npm run start`}
   );
 };
 
-export default Landingpage;
+export default LandingPage;
