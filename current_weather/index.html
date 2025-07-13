@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Lato&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
       body {
         font-family: sans-serif;
@@ -57,6 +58,15 @@
         border-radius: 20px;
         margin: 1rem;
       }
+      img{
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+        @media screen and (max-width: 500px){
+        .weatherbox{
+        display: flex;
+        flex-direction: column;
+      }}
     </style>
   </head>
   <body>
@@ -66,11 +76,11 @@
     <main>
       <h1 class="lato-regular">🌍 Wheather Dasboard</h1>
       <p>This data is used from Wheather API.</p>
-      <input type="text" id="cityInput" placeholder="Enter city name" style="padding: 1rem; border-radius: 1rem; font-size: 20px"/>
-      <button onclick="getWeather()" style="padding: 1rem; border-radius: 1rem; color: white; font-size: 0.9rem;">Get Details</button>
+      <input type="text" id="cityInput" placeholder="Enter city name" style="padding: 1rem; border-radius: 1rem; font-size: 20px; width: 50vw;"/>
+      <button onclick="getWeather()" style="padding: 1rem; border-radius: 1rem; background-color: black; color: white; font-size: 0.9rem;">Get Details</button>
 
       <div id="weather" ></div>
-      <div id="air-quality" style="padding: 1rem; width: 10rem; margin-inline: auto; border-radius: 1rem;"></div>
+      <div id="air-quality" style="padding: 1rem; width: 10rem; margin-inline: auto; border-radius: 1rem;" data-aos="zoom-out-up"></div>
     </main>
     <footer>
       <p style="text-align: center; margin-top: 10rem">
@@ -92,10 +102,6 @@
         const city = document.getElementById("cityInput").value;
         const apiKey = "ca0e2401a537448d8d6103114251506";
         const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
-<<<<<<< HEAD
-=======
-
->>>>>>> b13c24bd (Remove broken yarn.lock from To-Do-list)
         try {
           const response = await fetch(url);
 
@@ -118,15 +124,15 @@
             
             document.getElementById(
                 "weather"
-            ).innerHTML = `<h2>Weather in ${data.location.name}</h2>
-            <div style="display: flex; justify-content: center; gap: 2rem; align-items:center;">
-            <div style="text-align: start; ">
+            ).innerHTML = `<h3 style=" margin-top: 2rem; " data-aos="zoom-out-up">Wheather in ${data.location.name}</h3>
+            <div style="display: flex; justify-content: center; gap: 2rem; align-items:center;" class="weatherbox  ">
+            <div style="text-align: start;" data-aos="zoom-out-up">
                 <p><strong>Date & Time:</strong> ${data.location.localtime}</p>
                 <p><strong>Current Temperature:</strong> ${data.current.temp_c} °C</p>
                 <p><strong>Weather Condition:</strong> ${data.current.condition.text}</p>
             </div>
-                <img src="https:${data.current.condition.icon}" alt="weather image" height=40px width=40px>
-            <div style="text-align: start;">
+                <img src="https:${data.current.condition.icon}" data-aos="flip-up" alt="weather image" height=40px width=40px>
+            <div style="text-align: start;"  data-aos="zoom-out-up">
                 <p><strong>Wind Speed:</strong> ${data.current.wind_kph}kmh</p>
                 <p><strong>Humidity:</strong> ${data.current.humidity}</p>
                 <p><strong>UV:</strong> ${data.current.uv}</p>
@@ -144,16 +150,22 @@
           airQualityDiv.textContent = `Air Quality: ${usEpaIndex} (${level.label})`;
           airQualityDiv.style.backgroundColor = level.color;
           if (level.textColor) airQualityDiv.style.color = level.textColor;
+          if (level.textColor) airQualityDiv.style.boxShadow = "10px 10px 5px grey";
+          
 
           
         
         } catch (error) {
           document.getElementById(
             "weather"
-          ).innerHTML = `<p style="color:red;">${error.message}</p>`;
+          ).innerHTML = `<p style="color:blue;">${error.message}</p>`;
         }
 
       }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
