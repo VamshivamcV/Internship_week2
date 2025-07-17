@@ -19,9 +19,10 @@ A simple React app to manage your daily tasks — built with reusable components
 - Clean component-based structure
 
 ## 📸 Screenshot
-<img width="1024" height="640" alt="todo1" src="https://github.com/user-attachments/assets/7684b13e-8379-4235-9855-3ed633c5dbd1" />
-<img width="1024" height="640" alt="todo2" src="https://github.com/user-attachments/assets/1c54a93f-d165-44ab-81f1-04bd25c0dd73" />
-<img width="1024" height="640" alt="todo3" src="https://github.com/user-attachments/assets/ac4dd701-60a5-4bea-bd1e-e131c47baddb" />
+<img width="1017" height="579" alt="todo1" src="https://github.com/user-attachments/assets/1b864b0f-a35b-4a9d-b5a8-eea2396ad0c6" />
+<img width="1015" height="584" alt="todo2" src="https://github.com/user-attachments/assets/fdba9603-ef35-4255-866d-db3c7efa25bc" />
+<img width="1019" height="586" alt="todo3" src="https://github.com/user-attachments/assets/676302b5-d3c2-4f72-ab9a-31b12aaadcb9" />
+
 
 
 ## 📚 What I Learned
